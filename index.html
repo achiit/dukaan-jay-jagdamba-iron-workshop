@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Jay Jagdamba Iron Workshop | गेट, जाली व बाउंड्री गेट</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Noto+Sans+Devanagari:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+--bg:#faf7f2;--card:#fff;--ink:#1d2127;--mut:#5d6570;--dark:#15181d;--acc:#e8590c;--acc2:#c24a08;--line:#e6dfd4;--gold:#f2b134}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#15181d;--card:#1e2229;--ink:#f2efe9;--mut:#a4abb5;--dark:#0e1013;--line:#2c323b}}
+:root[data-theme="dark"]{--bg:#15181d;--card:#1e2229;--ink:#f2efe9;--mut:#a4abb5;--dark:#0e1013;--line:#2c323b}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*,*:before,*:after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'Poppins','Noto Sans Devanagari',system-ui,sans-serif;line-height:1.6}
+.wrap{max-width:1050px;margin:0 auto;padding:0 20px}
+header{background:var(--dark);position:sticky;top:env(safe-area-inset-top,0px);z-index:5;border-bottom:3px solid var(--acc)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{color:#fff;font-weight:700;font-size:1.05rem;letter-spacing:.3px}.logo b{color:var(--acc)}
+header a.btn{padding:8px 16px;font-size:.85rem}
+.btn{display:inline-block;background:var(--acc);color:#fff;text-decoration:none;font-weight:600;border:0;border-radius:8px;padding:14px 26px;cursor:pointer;font:inherit;font-weight:600}
+.btn:hover{background:var(--acc2)}
+.btn.ghost{background:transparent;border:2px solid #fff;color:#fff}.btn.ghost:hover{background:#fff;color:var(--dark)}
+.hero{background:linear-gradient(135deg,#15181d 0%,#262c35 60%,#3a2418 100%);color:#fff;padding:72px 0 80px;position:relative;overflow:hidden}
+.hero:after{content:"";position:absolute;right:-60px;top:-60px;width:320px;height:320px;border-radius:50%;background:radial-gradient(var(--acc),transparent 70%);opacity:.35}
+.tag{display:inline-block;background:rgba(242,177,52,.15);color:var(--gold);padding:5px 14px;border-radius:30px;font-size:.8rem;font-weight:600;letter-spacing:.5px}
+h1{font-size:clamp(1.9rem,6vw,3.2rem);line-height:1.2;margin:16px 0 14px;position:relative}
+h1 span{color:var(--acc)}
+.hero p{max-width:560px;color:#cfd3d9;position:relative}
+.cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px;position:relative}
+section{padding:64px 0}
+h2{font-size:clamp(1.5rem,4vw,2rem);margin:0 0 6px}
+.sub{color:var(--mut);margin:0 0 30px}
+h2:after{content:"";display:block;width:56px;height:4px;background:var(--acc);margin-top:10px;border-radius:2px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:24px}
+.card .ic{width:46px;height:46px;border-radius:10px;background:var(--dark);color:var(--acc);display:flex;align-items:center;justify-content:center;font-size:1.4rem;margin-bottom:14px}
+.card h3{margin:0 0 6px;font-size:1.05rem}.card p{margin:0;color:var(--mut);font-size:.92rem}
+.band{background:var(--dark);color:#fff}.band .sub{color:#a9afb8}
+.why{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:22px}
+.why div{border-left:3px solid var(--acc);padding-left:14px}.why b{display:block;color:var(--gold)}.why span{color:#b9bec6;font-size:.9rem}
+.formcard{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:28px;max-width:600px;margin:0 auto;box-shadow:0 10px 30px rgba(0,0,0,.07)}
+label{display:block;font-weight:600;font-size:.9rem;margin:16px 0 6px}
+input,textarea{width:100%;padding:13px 14px;border:1.5px solid var(--line);border-radius:9px;background:var(--bg);color:var(--ink);font:inherit}
+input:focus,textarea:focus{outline:none;border-color:var(--acc)}
+textarea{min-height:90px;resize:vertical}
+.formcard .btn{width:100%;margin-top:22px}
+.msg{margin-top:16px;padding:14px;border-radius:9px;display:none;font-size:.93rem}
+.msg.ok{display:block;background:#e6f6ec;color:#17673a}.msg.err{display:block;background:#fdeaea;color:#a12626}
+#admin{display:none}
+.bk{border:1px solid var(--line);background:var(--card);border-radius:12px;padding:16px;margin-bottom:12px;font-size:.92rem}
+.bk b{color:var(--acc)}
+footer{background:var(--dark);color:#a9afb8;padding:34px 0;text-align:center;font-size:.88rem;border-top:3px solid var(--acc)}
+footer b{color:#fff}
+</style>
+</head>
+<body>
+<header><div class="wrap"><div class="logo">JAY <b>JAGDAMBA</b> IRON WORKSHOP</div><a class="btn" href="#book">बुकिंग करें</a></div></header>
+
+<div class="hero"><div class="wrap">
+<span class="tag">मजबूती • भरोसा • बेहतरीन कारीगरी</span>
+<h1>आपके घर की सुरक्षा,<br><span>लोहे जैसी मजबूत</span></h1>
+<p>Jay Jagdamba Iron Workshop में हर तरह के गेट, जाली और बाउंड्री गेट आपकी जरूरत और नाप के अनुसार बनाए जाते हैं।</p>
+<div class="cta"><a class="btn" href="#book">अभी बुक करें</a><a class="btn ghost" href="#services">हमारी सेवाएं</a></div>
+</div></div>
+
+<section id="services"><div class="wrap">
+<h2>हमारी सेवाएं</h2><p class="sub">सभी तरह के लोहे के काम, एक ही जगह</p>
+<div class="grid">
+<div class="card"><div class="ic">▥</div><h3>मेन गेट</h3><p>घर और दुकान के लिए मजबूत व आकर्षक डिजाइन वाले गेट।</p></div>
+<div class="card"><div class="ic">▦</div><h3>लोहे की जाली</h3><p>खिड़की, बालकनी और सुरक्षा के लिए टिकाऊ जाली।</p></div>
+<div class="card"><div class="ic">▤</div><h3>बाउंड्री गेट</h3><p>फैक्ट्री, प्लॉट और फार्महाउस के लिए बड़े बाउंड्री गेट।</p></div>
+<div class="card"><div class="ic">✦</div><h3>कस्टम डिजाइन</h3><p>आपकी पसंद और नाप के अनुसार खास डिजाइन।</p></div>
+</div></div></section>
+
+<section class="band"><div class="wrap">
+<h2>हमें क्यों चुनें</h2><p class="sub">ग्राहक का भरोसा ही हमारी असली कमाई है</p>
+<div class="why">
+<div><b>मजबूत लोहा</b><span>बढ़िया क्वालिटी का मटेरियल</span></div>
+<div><b>सही नाप</b><span>आपकी जगह के हिसाब से तैयार</span></div>
+<div><b>समय पर काम</b><span>तय समय में डिलीवरी व फिटिंग</span></div>
+<div><b>सही दाम</b><span>ईमानदार और साफ रेट</span></div>
+</div></div></section>
+
+<section id="book"><div class="wrap">
+<h2>गेट बुक करें</h2><p class="sub">नीचे चारों जानकारी भरें, हम आपसे संपर्क करेंगे</p>
+<div class="formcard">
+<div id="f">
+<label for="n">ग्राहक का नाम</label><input id="n" placeholder="आपका पूरा नाम" autocomplete="name">
+<label for="c">संपर्क नंबर</label><input id="c" type="tel" inputmode="tel" placeholder="10 अंकों का मोबाइल नंबर" autocomplete="tel">
+<label for="s">गेट का साइज</label><input id="s" placeholder="जैसे: 10 फीट चौड़ा × 6 फीट ऊंचा">
+<label for="a">पता</label><textarea id="a" placeholder="पूरा पता लिखें" autocomplete="street-address"></textarea>
+<button class="btn" id="go" type="button">बुकिंग भेजें</button>
+<div class="msg" id="m"></div>
+</div></div></div></section>
+
+<section id="admin" class="band"><div class="wrap">
+<h2>प्राप्त बुकिंग</h2><p class="sub">सिर्फ मालिक को दिखता है</p>
+<div id="list"></div>
+</div></section>
+
+<footer><div class="wrap"><b>JAY JAGDAMBA IRON WORKSHOP</b><br>संस्थापक: लखन सिंह गौर<br>© 2026 सर्वाधिकार सुरक्षित</div></footer>
+
+<script>
+(function(){
+var $=function(i){return document.getElementById(i)};
+var db=null,user=null;
+function msg(t,k){var m=$('m');m.className='msg '+k;m.textContent=t}
+function esc(s){var d=document.createElement('div');d.textContent=s;return d.innerHTML}
+async function init(){
+  try{
+    if(window.claude&&claude.use){
+      db=await claude.use('db');user=await claude.use('user');
+      if(db&&user&&user.canEdit&&user.canEdit()){showAdmin()}
+    }
+  }catch(e){db=null}
+}
+function showAdmin(){
+  $('admin').style.display='block';
+  try{
+    db.collection('bookings').onSnapshot(function(snap){
+      var rows=[];snap.forEach(function(d){rows.push(d.data?d.data():d)});
+      rows.sort(function(a,b){return (b.at||0)-(a.at||0)});
+      $('list').innerHTML=rows.length?rows.map(function(r){
+        return '<div class="bk" style="color:var(--ink)"><b>'+esc(r.name||'')+'</b> · '+esc(r.contact||'')+
+        '<br>साइज: '+esc(r.size||'')+'<br>पता: '+esc(r.address||'')+
+        '<br><small style="color:var(--mut)">'+new Date(r.at||0).toLocaleString('hi-IN')+'</small></div>'}).join(''):
+        '<p style="color:#a9afb8">अभी कोई बुकिंग नहीं है।</p>';
+    });
+  }catch(e){}
+}
+$('go').addEventListener('click',async function(){
+  var v={name:$('n').value.trim(),contact:$('c').value.trim(),size:$('s').value.trim(),address:$('a').value.trim()};
+  if(!v.name||!v.contact||!v.size||!v.address){return msg('कृपया चारों जानकारी भरें।','err')}
+  if(v.contact.replace(/\D/g,'').length<10){return msg('सही मोबाइल नंबर लिखें।','err')}
+  if(!db){return msg('ऑनलाइन बुकिंग अभी उपलब्ध नहीं है। कृपया बाद में कोशिश करें।','err')}
+  $('go').disabled=true;
+  try{
+    v.at=Date.now();
+    await db.collection('bookings').doc('b'+v.at+Math.floor(Math.random()*1000)).set(v);
+    ['n','c','s','a'].forEach(function(i){$(i).value=''});
+    msg('धन्यवाद! आपकी बुकिंग मिल गई है। हम जल्द संपर्क करेंगे।','ok');
+  }catch(e){msg('बुकिंग भेजने में दिक्कत आई। कृपया फिर कोशिश करें।','err')}
+  $('go').disabled=false;
+});
+init();
+})();
+</script>
+</body>
+</html>
